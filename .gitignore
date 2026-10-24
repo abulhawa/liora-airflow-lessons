@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+logs/
+config/
+*.db
+*.db-*
+*.sqlite*
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.vscode/
+.idea/
