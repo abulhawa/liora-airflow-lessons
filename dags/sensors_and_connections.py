@@ -26,3 +26,31 @@ with DAG(
     )
 
     my_sensor >> my_task
+
+
+dag.doc_md = """
+# File Sensor Demo
+
+This DAG waits for a file before processing it.
+
+## Workflow
+1. **check_file** waits for `/tmp/my_file.txt`.
+2. **print_file_content** displays its contents.
+
+The sensor checks every 30 seconds.
+"""
+
+my_sensor.doc_md = """
+### File availability check
+
+Uses `my_filesystem_connection` to locate the file.
+
+- Mode: `reschedule`
+- Timeout: 150 seconds
+"""
+
+my_task.doc_md = """
+### Print File Content
+
+Displays the contents of `/tmp/my_file.txt`.
+"""
